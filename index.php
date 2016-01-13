@@ -9,7 +9,15 @@
     <!-- <meta http-equiv="refresh" content="2"> -->
 </head>
 <body>
-<h1>SlideBooker</h1>
+<h1>SlideBooker (Work in Progress)</h1>
+
+<p>Dit is een idee voor een nieuwe manier voor het boeken van uren</p>
+
+<ul>
+    <li>Schuif de taken hieronder naar de tijdlijn beneden om de opdracht te gaan boeken</li>
+    <li>Vervang de omschrijving van de taak door de tekst te selecteren en aan te passen</li>
+    <li>Verklein of vergroot de opdracht door aan de randen te trekken</li>
+</ul>
 
 <div class="group">
     <div class="resizable draggable blue">

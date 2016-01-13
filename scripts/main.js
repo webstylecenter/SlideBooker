@@ -3,7 +3,7 @@
  */
 $(function() {
     $( ".resizable" ).resizable({
-        grid: 50,
+        grid: 40,
         maxHeight: 50,
         minHeight: 50
     });
