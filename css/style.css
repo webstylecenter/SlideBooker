@@ -1,0 +1,109 @@
+body {
+    font-family: "Helvetica Neue";
+    font-size: 10pt;
+}
+
+.ui-resizable-se {
+    bottom: 17px;
+}
+
+.resizable {
+    height: 50px;
+    width: 237px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d4e4ef', endColorstr='#86aecc', GradientType=0);
+    font-size: 8pt;
+    display: inline-block;
+}
+
+.resizable h3 {
+    font-size: 8pt;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.resizable input[type=text] {
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+    font-size: 8pt;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    left: 0;
+    bottom: 20px;
+    width: 100%;
+}
+
+.resizable div {
+    position: absolute;
+    bottom: 0;
+}
+
+.resizable .endtime {
+    right: 15px;
+}
+
+/* Colors */
+.blue {
+    background: #d4e4ef; /* Old browsers */
+    background: -moz-linear-gradient(top, #d4e4ef 0%, #86aecc 100%);
+    background: -webkit-linear-gradient(top, #d4e4ef 0%, #86aecc 100%);
+    background: linear-gradient(to bottom, #d4e4ef 0%, #86aecc 100%);
+}
+
+.red {
+    background: #ef928f; /* Old browsers */
+    background: -moz-linear-gradient(top, #ef928f 0%, #cc343c 100%);
+    background: -webkit-linear-gradient(top, #ef928f 0%, #cc343c 100%);
+    background: linear-gradient(to bottom, #ef928f 0%, #cc343c 100%);
+}
+
+.orange {
+    background: #efcfae; /* Old browsers */
+    background: -moz-linear-gradient(top, #efcfae 0%, #cc8f52 100%);
+    background: -webkit-linear-gradient(top, #efcfae 0%, #cc8f52 100%);
+    background: linear-gradient(to bottom, #efcfae 0%, #cc8f52 100%);
+}
+
+#timeline {
+    width: 100%;
+    height: 130px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-top: 50px;
+    clear: both;
+    font-size: 5pt;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.hour {
+    width: 160px;
+    border-right: 1px solid black;
+    display: inline-block;
+    height: 130px;
+}
+
+.quarter {
+    width: 37.3px;
+    border-right: 1px solid lightgray;
+    color: lightgray;
+    display: inline-block;
+    height: 100%;
+}
+
+.quarter:first-of-type {
+    color: black;
+}
+
+.quarter:last-of-type {
+    border-right: 0;
+}
+
+.active {
+    background-color: rgba(255, 250, 10, 0.27);
+}
