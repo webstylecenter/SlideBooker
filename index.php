@@ -33,7 +33,6 @@
         <div class="endtime">12:15</div>
     </div>
 </div>
-
 <div class="group">
     <div class="resizable draggable red">
         <h3>Mira - mira 92</h3>
@@ -50,62 +49,20 @@
     <div class="endtime">12:15</div>
 </div>
 
-
 <div id="timeline">
-    <div class="hour">
-        <div class="quarter">09:00</div>
-        <div class="quarter">15</div>
-        <div class="quarter">30</div>
-        <div class="quarter">45</div>
-    </div>
-    <div class="hour">
-        <div class="quarter">10:00</div>
-        <div class="quarter">15</div>
-        <div class="quarter">30</div>
-        <div class="quarter">45</div>
-    </div>
-    <div class="hour">
-        <div class="quarter">11:00</div>
-        <div class="quarter">15</div>
-        <div class="quarter">30</div>
-        <div class="quarter">45</div>
-    </div>
-    <div class="hour">
-        <div class="quarter">12:00</div>
-        <div class="quarter break">15</div>
-        <div class="quarter break">30</div>
-        <div class="quarter">45</div>
-    </div>
-    <div class="hour">
-        <div class="quarter">13:00</div>
-        <div class="quarter">15</div>
-        <div class="quarter">30</div>
-        <div class="quarter">45</div>
-    </div>
-    <div class="hour">
-        <div class="quarter">14:00</div>
-        <div class="quarter">15</div>
-        <div class="quarter">30</div>
-        <div class="quarter">45</div>
-    </div>
-    <div class="hour">
-        <div class="quarter">15:00</div>
-        <div class="quarter">15</div>
-        <div class="quarter">30</div>
-        <div class="quarter">45</div>
-    </div>
-    <div class="hour">
-        <div class="quarter">16:00</div>
-        <div class="quarter">15</div>
-        <div class="quarter">30</div>
-        <div class="quarter">45</div>
-    </div>
-    <div class="hour">
-        <div class="quarter">17:00</div>
-        <div class="quarter">15</div>
-        <div class="quarter">30</div>
-        <div class="quarter">45</div>
-    </div>
+    <?php
+
+    $hours = array(9, 10, 11, 12, 13, 14, 15, 16, 17);
+    foreach ($hours as $hour) {
+        echo '<div class="hour">
+                <div class="quarter" data-starttime="'.$hour.':00" data-endtime="'.$hour.':15">'.$hour.':00</div>
+                <div class="quarter" data-starttime="'.$hour.':15" data-endtime="'.$hour.':30">15</div>
+                <div class="quarter" data-starttime="'.$hour.':30" data-endtime="'.$hour.':45">30</div>
+                <div class="quarter" data-starttime="'.$hour.':45" data-endtime="'.($hour+1).':00">45</div>
+            </div>';
+    }
+
+    ?>
 </div>
 </body>
 </html>

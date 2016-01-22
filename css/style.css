@@ -9,12 +9,13 @@ body {
 
 .resizable {
     height: 50px;
-    width: 237px;
+    width: 230px;
     border: 2px solid gray;
     border-radius: 5px;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d4e4ef', endColorstr='#86aecc', GradientType=0);
     font-size: 8pt;
     display: inline-block;
+    float:left;
+    position:absolute !important;
 }
 
 .resizable h3 {
@@ -89,7 +90,8 @@ body {
 }
 
 .quarter {
-    width: 37.3px;
+    width: 30px;
+    margin-right:7.3px;
     border-right: 1px solid lightgray;
     color: lightgray;
     display: inline-block;
