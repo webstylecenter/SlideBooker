@@ -14,14 +14,15 @@
 <body>
 <h1>SlideBooker (Work in Progress)</h1>
 
-<p>Dit is een idee voor een nieuwe manier voor het boeken van uren</p>
+<p>Dit is een idee voor een nieuwe manier voor het boeken van uren.<br />
+    Voor deze test is het aan te raden het venster fullscreen te maken zodat de timeline volledig in beeld past.</p>
 
 <ul>
     <li>Schuif de taken hieronder naar de tijdlijn beneden om de opdracht te gaan boeken</li>
     <li>Vervang de omschrijving van de taak door de tekst te selecteren en aan te passen</li>
     <li>Verklein of vergroot de opdracht door aan de randen te trekken</li>
-    <li><a href="javascript:createTask('test', 'addedDescription', 'blue');">Create test</a></li>
-    <li><a href="javascript:gapFiller()">Fill in the gaps</a></li>
+    <li><a href="javascript:createTask('test', 'addedDescription', 'blue');">Create task</a></li>
+    <li><a href="https://github.com/webstylecenter/SlideBooker" target="_blank">Download repository</a></li>
 </ul>
 
 <div id="tasks">

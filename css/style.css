@@ -2,6 +2,9 @@ body {
     font-family: "Helvetica Neue";
     font-size: 10pt;
 }
+#tasks {
+    margin-top:50px;
+}
 
 .ui-resizable-se {
     bottom: 17px;
@@ -77,7 +80,7 @@ body {
     height: 130px;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    margin-top: 50px;
+    margin-top: 150px;
     clear: both;
     font-size: 5pt;
     overflow-x: scroll;
