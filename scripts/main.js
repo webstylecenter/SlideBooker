@@ -10,7 +10,7 @@ $(function() {
 function createTask(title, description, color) {
 
     var task = document.createElement('div');
-    task.className  = 'resizable draggable ' + color;
+    task.className  = 'task resizable draggable ' + color;
 
     var itemTitle = document.createElement('h3');
     itemTitle.textContent = title;

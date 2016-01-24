@@ -3,6 +3,11 @@
  */
 
 function addInteraction() {
+
+    $('.task').each(function() {
+        $(this).uniqueId();
+    });
+
     $('.resizable').each(function() {
         if($(this).not('.ui-resizable')) {
             $( this ).resizable({
@@ -48,11 +53,12 @@ function addInteraction() {
                     var endtime = $(this).data('endtime');
                     if (true === first) {
                         $(ui.draggable).find('.startime').html(starttime);
-
                         first = false;
                     } else {
                         $(ui.draggable).find('.endtime').html(endtime);
                     }
+                    $(this).attr('data-taken', $(ui.draggable).attr('id'));
+                    gapFiller();
                 },
                 over: function(event, ui) {
 

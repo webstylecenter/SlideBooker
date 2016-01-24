@@ -12,11 +12,15 @@ function countTimeUp(time) {
     }
 
     time = time[0] + ':' + time[1];
+
+    $(".hour").find("[data-endtime='"+time+"']").attr('data-taken', 'yes');
     return time;
 
 }
 
 function countTimeDown(time) {
+
+    $(".hour").find("[data-endtime='"+time+"']").attr('data-taken', 'no');
 
     time = time.split(':');
     time[1] = parseInt(time[1]) - 15;
