@@ -17,6 +17,7 @@
     <li>Schuif de taken hieronder naar de tijdlijn beneden om de opdracht te gaan boeken</li>
     <li>Vervang de omschrijving van de taak door de tekst te selecteren en aan te passen</li>
     <li>Verklein of vergroot de opdracht door aan de randen te trekken</li>
+    <li><a href="javascript:create();">Create test</a></li>
 </ul>
 
 <div class="group">
@@ -52,6 +53,8 @@
     <div class="tasktime">-</div>
     <div class="endtime">-</div>
 </div>
+
+<div id="test"></div>
 
 <div id="timeline">
     <?php
