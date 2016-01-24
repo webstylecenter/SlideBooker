@@ -6,6 +6,8 @@
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
+    <script type="text/javascript" src="scripts/time.js"></script>
+    <script type="text/javascript" src="scripts/interaction.js"></script>
     <!-- <meta http-equiv="refresh" content="2"> -->
 </head>
 <body>
@@ -17,44 +19,43 @@
     <li>Schuif de taken hieronder naar de tijdlijn beneden om de opdracht te gaan boeken</li>
     <li>Vervang de omschrijving van de taak door de tekst te selecteren en aan te passen</li>
     <li>Verklein of vergroot de opdracht door aan de randen te trekken</li>
-    <li><a href="javascript:create();">Create test</a></li>
+    <li><a href="javascript:createTask('test', 'addedDescription', 'blue');">Create test</a></li>
 </ul>
 
-<div class="group">
-    <div class="resizable draggable blue">
-        <h3>Beterhout - BHREM 192</h3>
-        <input type="text" value="Wijziging aangebracht die straks weer eruit mag"/>
-        <div class="startime">-</div>
-        <div class="tasktime">task</div>
-        <div class="endtime">-</div>
+<div id="tasks">
+    <!-- <div class="group">
+        <div class="resizable draggable blue">
+            <h3>Beterhout - BHREM 192</h3>
+            <input type="text" value="Wijziging aangebracht die straks weer eruit mag"/>
+            <div class="startime">-</div>
+            <div class="tasktime">task</div>
+            <div class="endtime">-</div>
+        </div>
+        <div class="resizable draggable blue">
+            <h3>Beterhout - BHREM 192</h3>
+            <input type="text" value="Wijziging aangebracht die straks weer eruit mag"/>
+            <div class="startime">-</div>
+            <div class="tasktime">-</div>
+            <div class="endtime">-</div>
+        </div>
     </div>
-    <div class="resizable draggable blue">
-        <h3>Beterhout - BHREM 192</h3>
+    <div class="group">
+        <div class="resizable draggable red">
+            <h3>Mira - mira 92</h3>
+            <input type="text" value="Wijziging aangebracht die straks weer eruit mag"/>
+            <div class="startime">-</div>
+            <div class="tasktime">-</div>
+            <div class="endtime">-</div>
+        </div>
+    </div>
+    <div class="resizable draggable orange">
+        <h3>KastenDiscount - KAST 48</h3>
         <input type="text" value="Wijziging aangebracht die straks weer eruit mag"/>
         <div class="startime">-</div>
         <div class="tasktime">-</div>
         <div class="endtime">-</div>
-    </div>
+    </div> -->
 </div>
-<div class="group">
-    <div class="resizable draggable red">
-        <h3>Mira - mira 92</h3>
-        <input type="text" value="Wijziging aangebracht die straks weer eruit mag"/>
-        <div class="startime">-</div>
-        <div class="tasktime">-</div>
-        <div class="endtime">-</div>
-    </div>
-</div>
-
-<div class="resizable draggable orange">
-    <h3>KastenDiscount - KAST 48</h3>
-    <input type="text" value="Wijziging aangebracht die straks weer eruit mag"/>
-    <div class="startime">-</div>
-    <div class="tasktime">-</div>
-    <div class="endtime">-</div>
-</div>
-
-<div id="test"></div>
 
 <div id="timeline">
     <?php
