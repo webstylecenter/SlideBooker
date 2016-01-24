@@ -46,6 +46,9 @@ body {
 .resizable .endtime {
     right: 15px;
 }
+.resizable .tasktime {
+    right: 45%;
+}
 
 /* Colors */
 .blue {
@@ -92,7 +95,7 @@ body {
 .quarter {
     width: 30px;
     margin-right:7.3px;
-    border-right: 1px solid lightgray;
+    border-left: 1px solid lightgray;
     color: lightgray;
     display: inline-block;
     height: 100%;

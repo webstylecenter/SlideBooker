@@ -23,30 +23,34 @@
     <div class="resizable draggable blue">
         <h3>Beterhout - BHREM 192</h3>
         <input type="text" value="Wijziging aangebracht die straks weer eruit mag"/>
-        <div class="startime">10:00</div>
-        <div class="endtime">12:15</div>
+        <div class="startime">-</div>
+        <div class="tasktime">task</div>
+        <div class="endtime">-</div>
     </div>
     <div class="resizable draggable blue">
         <h3>Beterhout - BHREM 192</h3>
         <input type="text" value="Wijziging aangebracht die straks weer eruit mag"/>
-        <div class="startime">10:00</div>
-        <div class="endtime">12:15</div>
+        <div class="startime">-</div>
+        <div class="tasktime">-</div>
+        <div class="endtime">-</div>
     </div>
 </div>
 <div class="group">
     <div class="resizable draggable red">
         <h3>Mira - mira 92</h3>
         <input type="text" value="Wijziging aangebracht die straks weer eruit mag"/>
-        <div class="startime">10:00</div>
-        <div class="endtime">12:15</div>
+        <div class="startime">-</div>
+        <div class="tasktime">-</div>
+        <div class="endtime">-</div>
     </div>
 </div>
 
 <div class="resizable draggable orange">
     <h3>KastenDiscount - KAST 48</h3>
     <input type="text" value="Wijziging aangebracht die straks weer eruit mag"/>
-    <div class="startime">10:00</div>
-    <div class="endtime">12:15</div>
+    <div class="startime">-</div>
+    <div class="tasktime">-</div>
+    <div class="endtime">-</div>
 </div>
 
 <div id="timeline">
