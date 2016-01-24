@@ -4,6 +4,8 @@
 
 function addInteraction() {
 
+    resizeSize = 0;
+
     $('.task').each(function() {
         $(this).uniqueId();
     });
@@ -14,18 +16,23 @@ function addInteraction() {
                 grid: 40,
                 maxHeight: 50,
                 minHeight: 50,
+                start: function(event, ui) {
+                    resizeSize = ui.size.width;
+                },
                 resize: function(event, ui) {
-                    var amount = (ui.size.width - ui.originalSize.width) / 40;
+                    var amount = (ui.size.width - resizeSize) / 40;
                     if (amount > 0) {
                         $(this).find('.endtime').html(countTimeUp($(this).find('.endtime').html(), amount));
                     } else {
                         $(this).find('.endtime').html(countTimeDown($(this).find('.endtime').html(), amount));
                     }
+                    resizeSize = ui.size.width;
                 },
                 stop: function(event, ui) {
                     var starttime = $(this).find('.startime').html();
                     var endtime = $(this).find('.endtime').html();
                     $(this).find('.tasktime').html(calculateTime(starttime, endtime));
+                    gapFiller();
                 }
             });
         };

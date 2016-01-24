@@ -29,7 +29,7 @@ function countTimeDown(time) {
         time[0] = parseInt(time[0]) - 1;
     }
 
-    if (time[0] < 10) {time[0] = '0'+time[0];}
+    if (time[1] < 10) {time[1] = '0'+time[1];}
     time = time[0] + ':' + time[1];
     return time;
 
