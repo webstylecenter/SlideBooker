@@ -2,7 +2,10 @@ body {
     font-family: "Helvetica Neue";
     font-size: 10pt;
 }
-
+#tasks {
+    margin-top:50px;
+    margin-bottom: 150px;
+}
 #booker table {
     width:1200px;
     margin:auto;
@@ -49,4 +52,69 @@ body {
 #progressbar table tr:first-child, #progressbar table tr:last-child {
     width:50px;
     font-size:8pt;
+}
+
+/* Drag & Drop */
+.ui-resizable-se {
+    bottom: 17px;
+}
+
+.resizable {
+    height: 30px;
+    width: 250px;
+    border:1px solid black;
+    font-size: 8pt;
+    display: inline-block;
+    float:left;
+    position:absolute !important;
+}
+
+.resizable h3 {
+    font-size: 8pt;
+    font-weight: bold;
+    margin: 0;
+}
+
+.resizable p {
+    font-size: 8pt;
+    width: 100%;
+    margin:0;
+}
+
+.resizable div {
+    position: absolute;
+    bottom: 0;
+}
+
+.resizable .endtime {
+    right: 15px;
+}
+.resizable .tasktime {
+    right: 45%;
+}
+
+/* Colors */
+.blue {
+    background: #d4e4ef; /* Old browsers */
+    background: -moz-linear-gradient(top, #d4e4ef 0%, #86aecc 100%);
+    background: -webkit-linear-gradient(top, #d4e4ef 0%, #86aecc 100%);
+    background: linear-gradient(to bottom, #d4e4ef 0%, #86aecc 100%);
+}
+
+.red {
+    background: #ef928f; /* Old browsers */
+    background: -moz-linear-gradient(top, #ef928f 0%, #cc343c 100%);
+    background: -webkit-linear-gradient(top, #ef928f 0%, #cc343c 100%);
+    background: linear-gradient(to bottom, #ef928f 0%, #cc343c 100%);
+}
+
+.orange {
+    background: #efcfae; /* Old browsers */
+    background: -moz-linear-gradient(top, #efcfae 0%, #cc8f52 100%);
+    background: -webkit-linear-gradient(top, #efcfae 0%, #cc8f52 100%);
+    background: linear-gradient(to bottom, #efcfae 0%, #cc8f52 100%);
+}
+
+.active {
+    background-color: #fff4a2;
 }

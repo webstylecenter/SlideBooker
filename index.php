@@ -9,7 +9,7 @@
     <script type="text/javascript" src="scripts/time.js"></script>
     <script type="text/javascript" src="scripts/interaction.js"></script>
     <script type="text/javascript" src="scripts/gap-filler.js"></script>
-    <meta http-equiv="refresh" content="2">
+    <!-- <meta http-equiv="refresh" content="2"> -->
 </head>
 <body>
 <h1>SlideBooker (Work in Progress)</h1>
@@ -23,6 +23,29 @@
     <li>Verklein of vergroot de opdracht door aan de randen te trekken</li>
     <li><a href="https://github.com/webstylecenter/SlideBooker" target="_blank">Download repository</a></li>
 </ul>
+
+<div id="tasks">
+    <div class="group">
+        <div class="task resizable draggable blue">
+            <h3>Beterhout - BHREM 192</h3>
+            <p>Wijziging aangebracht die straks weer eruit mogen</p>
+        </div>
+        <div class="task resizable draggable blue">
+            <h3>Beterhout - BHREM 192</h3>
+            <p>Wijziging aangebracht die straks weer eruit mogen</p>
+        </div>
+    </div>
+    <div class="group">
+        <div class="task resizable draggable red">
+            <h3>Mira - mira 92</h3>
+            <p>Wijziging aangebracht die straks weer eruit mogen</p>
+        </div>
+    </div>
+    <div class="task resizable draggable orange">
+        <h3>KastenDiscount - KAST 48</h3>
+        <p>Wijziging aangebracht die straks weer eruit mogen</p>
+    </div>
+</div>
 
 <form id="booker">
 
@@ -46,7 +69,7 @@
                         </select>
                     </td>
                     <td>
-                        <input type="text" value=""'.$disabled.'" />
+                        <input type="text" value=""'.$disabled.'" class="droppable" />
                     </td>
                     <td>
                         <select name="starttijd'.$i.'"'.$disabled.'">
