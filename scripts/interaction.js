@@ -12,7 +12,7 @@ function addInteraction() {
 
     $('.resizable').each(function() {
         if($(this).not('.ui-resizable')) {
-            $( this ).resizable({
+            $(this).resizable({
                 grid: 40,
                 maxHeight: 50,
                 minHeight: 50,
