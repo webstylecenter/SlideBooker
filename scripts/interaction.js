@@ -13,28 +13,20 @@ function addInteraction() {
     $('.draggable').each(function() {
         if($(this).not('ui-draggable')) {
             $(".draggable").draggable({
-                snap: ".droppable",
-                start: function(event, ui) {
-
-                },
-                stop: function(event, ui) {
-
-                }
+                snap: ".droppable"
             });
         }
     });
+
     $('.droppable').each(function() {
         if($(this).not('ui-droppable')) {
             $(".droppable").droppable({
                 drop: function(event, ui) {
-
+                    var projectSelector = '#' + $(this).attr('data-selector');
+                    $(projectSelector).val($(ui.draggable).attr('data-projectvalue'))
+                    $(this).val($(ui.draggable).attr('data-task'));
+                    $(ui.draggable).fadeOut('slow');
                     gapFiller();
-                },
-                over: function(event, ui) {
-
-                },
-                activate: function(event, ui) {
-                    first = true;
                 },
                 hoverClass: "active"
             });
