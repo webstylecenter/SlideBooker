@@ -20,7 +20,7 @@ function generateRow($i) {
                     </td>
                 </td>
                 <td>
-                    <input type="text" value=""'.$disabled.'" class="droppable" data-selector="project'.$i.'" onchange="enableNextRow('.$i.');" />
+                    <input type="text" value=""'.$disabled.'" class="droppable" data-selector="project'.$i.'" data-type-selector="type'.$i.'" data-rownr="'.$i.'" onchange="enableNextRow('.$i.');" />
                 </td>
                 <td>
                     '.timeSelector('starttijd', $i).'

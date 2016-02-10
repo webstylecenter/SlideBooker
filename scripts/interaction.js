@@ -23,10 +23,15 @@ function addInteraction() {
             $(".droppable").droppable({
                 drop: function(event, ui) {
                     var projectSelector = '#' + $(this).attr('data-selector');
-                    $(projectSelector).val($(ui.draggable).attr('data-projectvalue'))
+                    var typeSelector = '#' + $(this).attr('data-type-selector');
+                    var rowNr = $(this).attr('data-rownr');
+                    $(projectSelector).val($(ui.draggable).attr('data-projectvalue'));
+                    $(typeSelector).val('development');
                     $(this).val($(ui.draggable).attr('data-task'));
                     $(ui.draggable).fadeOut('slow');
                     gapFiller();
+                    console.log(rowNr);
+                    enableNextRow(rowNr);
                 },
                 hoverClass: "active"
             });
