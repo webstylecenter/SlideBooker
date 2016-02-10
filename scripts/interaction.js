@@ -33,3 +33,14 @@ function addInteraction() {
         }
     });
 }
+
+function enableNextRow(nr) {
+    nr++;
+    enableRow(nr);
+}
+
+function enableRow(nr) {
+    $('#row'+nr).find('*').each(function() {
+        $(this).prop('disabled', false);
+    });
+}
