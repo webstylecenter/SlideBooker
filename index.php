@@ -1,4 +1,8 @@
-<html>
+<?php
+
+require 'modules/bookerFormRow.php';
+
+?><html>
 <head>
     <title>SlideBooker</title>
     <link rel="stylesheet" href="css/style.css"/>
@@ -47,57 +51,38 @@
     <table>
         <tr>
             <th>Project</th>
+            <th>Type</th>
             <th>Opdracht</th>
             <th>Starttijd</th>
             <th>Eindtijd</th>
             <th>Tijdsduur</th>
+            <th>Factureren</th>
         </tr>
         <?php
 
-        for ($i=1; $i<=20; $i++) {
+        for($i=1;$i<15;$i++) {
+            echo generateRow($i);
+        }
 
-            $disabled = ($i == 1 ? '' : ' disabled="disabled"');
-            echo '<tr>
-                    <td>
-                        <select id="project'.$i.'" name="project'.$i.'"'.$disabled.'">
-                            <option value="">Maak een keuze</option>
-                            <option value="Beterhout">Beterhout</option>
-                            <option value="Mira">Mira</option>
-                            <option value="KastenDiscount">KastenDiscount</option>
-                        </select>
-                    </td>
-                    <td>
-                        <input type="text" value=""'.$disabled.'" class="droppable" data-selector="project'.$i.'" />
-                    </td>
-                    <td>
-                        <select name="starttijd'.$i.'"'.$disabled.'">
-                            <option value="">'.($i == 1 ? '09:00' : '-').'</option>
-                        </select>
-                    </td>
-                    <td>
-                        <select name="project'.$i.'"'.$disabled.'">
-                            <option value="">'.($i == 1 ? '09:15' : '-').'</option>
-                        </select>
-                    </td>
-                    <td>'.($i == 1 ? '00:15' : '').'</td>
-                </tr>';
-
-        }  ?>
+        ?>
+        <tr>
+            <td colspan="7">
+                <button>+ Rij toevoegen</button>
+            </td>
+        </tr>
         <tr>
             <td>
                 <select name="projectFinal">
                     <option value="peter">Peter van Dam</option>
                 </select>
             </td>
-            <td>
+            <td colspan="4">
                 <input type="text" value="Random stuff" />
             </td>
-            <td colspan="3">
+            <td>
                 06:00
             </td>
-        </tr>
-        <tr>
-            <td colspan="5">
+            <td>
                 <input type="button" value="Save" />
             </td>
         </tr>

@@ -23,13 +23,65 @@ function addInteraction() {
             $(".droppable").droppable({
                 drop: function(event, ui) {
                     var projectSelector = '#' + $(this).attr('data-selector');
-                    $(projectSelector).val($(ui.draggable).attr('data-projectvalue'))
+                    var typeSelector = '#' + $(this).attr('data-type-selector');
+                    var rowNr = $(this).attr('data-rownr');
+                    $(projectSelector).val($(ui.draggable).attr('data-projectvalue'));
+                    $(typeSelector).val('development');
                     $(this).val($(ui.draggable).attr('data-task'));
                     $(ui.draggable).fadeOut('slow');
                     gapFiller();
+                    console.log(rowNr);
+                    enableNextRow(rowNr);
                 },
                 hoverClass: "active"
             });
         }
     });
+}
+
+function enableNextRow(nr) {
+    nr++;
+    enableRow(nr);
+}
+
+function enableRow(nr) {
+    $('#row'+nr).find('*').each(function() {
+        $(this).prop('disabled', false);
+    });
+}
+
+function updateTime(el, nr) {
+    var selectedTime = $(el).val();
+    setNextStartTime(nr, selectedTime);
+    updateAmountOfTime(nr);
+    enableNextRow(nr);
+}
+
+function setNextStartTime(nr, selectedTime) {
+    var timeInfo = selectedTime.split(':');
+    var hour = timeInfo[0];
+    var minute = timeInfo[1];
+    nr++;
+
+    if ($('#starttijd'+nr).val() == '09:00') {
+        $('#starttijd'+nr).val(selectedTime);
+
+        // Set next time
+        minute = parseInt(minute) + 15;
+        if (minute == 60) {
+            var time = (parseInt(hour)+1)+':00';
+        } else {
+            var time = hour+':'+minute;
+        }
+
+        $('#eindtijd'+nr).val(time);
+        updateAmountOfTime(nr);
+    }
+}
+
+function updateAmountOfTime(nr) {
+    var start = $('#starttijd'+nr).val();
+    var eind = $('#eindtijd'+nr).val();
+    var time = calculateTime(start, eind);
+    $('#time'+nr).val(time);
 }
