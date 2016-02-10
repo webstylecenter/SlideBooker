@@ -28,7 +28,7 @@ function generateRow($i) {
                 <td>
                     '.timeSelector('eindtijd', $i).'
                 </td>
-                <td>'.($i == 1 ? '00:15' : '').'</td>
+                <td><input name="time'.$i.'" id="time'.$i.'" class="time" type="text" value="'.($i == 1 ? '00:15' : '').'" /></td>
                 <td>
                     <input type="radio" name="factureren'.$i.'" id="factureren'.$i.'"'.$disabled.'" value="1" checked="checked" /> Ja
                     <input type="radio" name="factureren'.$i.'" id="factureren'.$i.'"'.$disabled.'" value="0" /> Nee

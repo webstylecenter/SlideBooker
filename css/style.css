@@ -61,6 +61,11 @@ body {
     width:50px;
     font-size:8pt;
 }
+.time {
+    border:0px;
+    text-align:center;
+}
+
 
 /* Drag & Drop */
 .ui-resizable-se {

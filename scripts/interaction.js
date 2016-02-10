@@ -48,11 +48,11 @@ function enableRow(nr) {
 function updateTime(el, nr) {
     var selectedTime = $(el).val();
     setNextStartTime(nr, selectedTime);
+    updateAmountOfTime(nr);
     enableNextRow(nr);
 }
 
 function setNextStartTime(nr, selectedTime) {
-    console.log(selectedTime);
     var timeInfo = selectedTime.split(':');
     var hour = timeInfo[0];
     var minute = timeInfo[1];
@@ -66,10 +66,17 @@ function setNextStartTime(nr, selectedTime) {
         if (minute == 60) {
             var time = (parseInt(hour)+1)+':00';
         } else {
-            console.log(minute);
             var time = hour+':'+minute;
         }
 
         $('#eindtijd'+nr).val(time);
+        updateAmountOfTime(nr);
     }
+}
+
+function updateAmountOfTime(nr) {
+    var start = $('#starttijd'+nr).val();
+    var eind = $('#eindtijd'+nr).val();
+    var time = calculateTime(start, eind);
+    $('#time'+nr).val(time);
 }
