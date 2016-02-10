@@ -43,9 +43,9 @@ function generateRow($i) {
 function timeSelector($name, $i) {
 
     $disabled = ($i == 1 ? '' : ' disabled="disabled"');
-    $updateTime = ($name == 'eindtijd' ? ' onchange="updateTime('.$i.');"' : '');
+    $updateTime = ($name == 'eindtijd' ? ' onchange="updateTime(this, '.$i.');"' : '');
 
-    $selector = '<select name="'.$name.$i.'"'.$disabled.$updateTime.'">';
+    $selector = '<select id="'.$name.$i.'" name="'.$name.$i.'"'.$disabled.$updateTime.'">';
     $hours = array(
         '09', 10, 11, 12, 13, 14, 15, 16, 17
     );

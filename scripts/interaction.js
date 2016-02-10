@@ -44,3 +44,32 @@ function enableRow(nr) {
         $(this).prop('disabled', false);
     });
 }
+
+function updateTime(el, nr) {
+    var selectedTime = $(el).val();
+    setNextStartTime(nr, selectedTime);
+    enableNextRow(nr);
+}
+
+function setNextStartTime(nr, selectedTime) {
+    console.log(selectedTime);
+    var timeInfo = selectedTime.split(':');
+    var hour = timeInfo[0];
+    var minute = timeInfo[1];
+    nr++;
+
+    if ($('#starttijd'+nr).val() == '09:00') {
+        $('#starttijd'+nr).val(selectedTime);
+
+        // Set next time
+        minute = parseInt(minute) + 15;
+        if (minute == 60) {
+            var time = (parseInt(hour)+1)+':00';
+        } else {
+            console.log(minute);
+            var time = hour+':'+minute;
+        }
+
+        $('#eindtijd'+nr).val(time);
+    }
+}
