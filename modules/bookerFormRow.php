@@ -23,10 +23,10 @@ function generateRow($i) {
                     <input type="text" value=""'.$disabled.'" class="droppable" data-selector="project'.$i.'" data-type-selector="type'.$i.'" data-rownr="'.$i.'" onchange="enableNextRow('.$i.');" />
                 </td>
                 <td>
-                    '.timeSelector('starttijd', $i).'
+                    '.timeSelector('starttijd', $i, new \DateTime('9:00'), new \DateTime('18:00'), 15).'
                 </td>
                 <td>
-                    '.timeSelector('eindtijd', $i).'
+                     '.timeSelector('eindtijd', $i, new \DateTime('9:00'), new \DateTime('18:00'), 15).'
                 </td>
                 <td><input name="time'.$i.'" id="time'.$i.'" class="time" type="text" value="'.($i == 1 ? '00:15' : '').'" /></td>
                 <td>
@@ -36,33 +36,20 @@ function generateRow($i) {
             </tr>';
 
     return $return;
-
-
 }
 
-function timeSelector($name, $i) {
-
+function timeSelector($name, $i, \DateTime $start, \DateTime $end, $interval)
+{
     $disabled = ($i == 1 ? '' : ' disabled="disabled"');
-    $updateTime = ($name == 'eindtijd' ? ' onchange="updateTime(this, '.$i.');"' : '');
+    $updateTime = ($name == 'eindtijd' ? ' onchange="updateTime(this, ' . $i . ');"' : '');
 
-    $selector = '<select id="'.$name.$i.'" name="'.$name.$i.'"'.$disabled.$updateTime.'">';
-    $hours = array(
-        '09', 10, 11, 12, 13, 14, 15, 16, 17
-    );
-    $minutes = array(
-        '00', 15, 30, 45
-    );
+    $selector = '<select id="' . $name . $i . '" name="' . $name . $i . '"' . $disabled . $updateTime . '">';
+    while ($start <= $end) {
+        $selector .= '<option value="' . $start->format('H') . ':' . $start->format('i') . '">' . $start->format('H') . ':' . $start->format('i') . '</option>';
 
-    foreach($hours as $hour) {
-        foreach($minutes as $minute) {
-            $selector .= '<option value="'.$hour.':'.$minute.'">'.$hour.':'.$minute.'</option>';
-        }
-        $last = '<option value="'.($hour+1).':00">'.($hour+1).':00</option>';
+        $start->modify('+' . $interval . ' minutes');
     }
-
-    $selector .= $last;
     $selector .= '</select>';
 
     return $selector;
-
 }
