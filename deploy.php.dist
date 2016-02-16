@@ -1,0 +1,20 @@
+<?php
+
+require 'recipe/common.php';
+
+server('prod', '0.0.0.0', 22)
+    ->user('username')
+    ->password()
+    ->stage('production')
+    ->env('deploy_path', '/path/to/deploy_path');
+
+set('repository', 'git@github.com:username/Repository.git');
+set('keep_releases', 5);
+
+task('deploy', [
+    'deploy:prepare',
+    'deploy:release',
+    'deploy:update_code',
+    'deploy:symlink',
+    'cleanup'
+]);
