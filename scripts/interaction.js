@@ -55,6 +55,7 @@ function updateTime(el, nr) {
     setNextStartTime(nr, selectedTime);
     updateAmountOfTime(nr);
     enableNextRow(nr);
+    colorTimeline();
 }
 
 function setNextStartTime(nr, selectedTime) {
@@ -111,7 +112,33 @@ function setTotalTime(nr) {
 
     var newTime = start[0]+':'+start[1];
     $('#eindtijd'+nr).val(newTime);
+    setNextStartTime(nr, newTime);
+    colorTimeline();
+}
 
-    console.log(newTime);
-    setNextStartTime(nr, newTime)
+function colorTimeline() {
+    var nr = 1;
+    console.log('color');
+    while (nr < 15) {
+        var start = $('#starttijd'+nr).val();
+        var end = $('#eindtijd'+nr).val();
+
+
+        var time = start;
+        $('.timeblock').each(function() {console.log(start);
+            if($(this).data('time') == start) {
+                $(this).removeClass('free');
+                $(this).addClass('taken');
+            }
+            // TODO: Bereken tussentijd
+
+            if($(this).data('time') == end) {
+                $(this).removeClass('free');
+                $(this).addClass('taken');
+            }
+        });
+
+        nr++;
+    }
+
 }

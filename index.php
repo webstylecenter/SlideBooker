@@ -93,10 +93,11 @@ require 'modules/bookerFormRow.php';
         <tr>
             <td>09:00</td>
             <?php
-                $time = 0;
-                while($time < 375) {
-                    echo '<td class="'.(rand(1, 3) == 1 ? 'taken' : 'free').'">&nbsp;</td>';
-                    $time=$time+15;
+                for ($h=8; $h<18; $h=$h+1) {
+                    for ($m = 0; $m < 60; $m = $m + 15) {
+                        $val = ($h < 10 ? '0' . $h : $h) . ':' . ($m < 10 ? '0' . $m : $m);
+                        echo '<td data-time="' . $val . '" class="timeblock free">&nbsp;</td>';
+                    }
                 }
             ?>
             <td>15:45</td>

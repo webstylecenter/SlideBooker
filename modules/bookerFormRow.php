@@ -44,7 +44,7 @@ function generateRow($i)
 function timeSelector($name, $i, \DateTime $start, \DateTime $end, $interval)
 {
     $disabled = $i !== 1 ? ' disabled="disabled"' : '';
-    $updateTime = $name === 'eindtijd' ? ' onchange="updateTime(this, ' . $i . ');"' : '';
+    $updateTime = ($name === 'eindtijd' ? ' onchange="updateTime(this, ' . $i . ');"' : '');
 
     $selector = '<select id="' . $name . $i . '" name="' . $name . $i . '"' . $disabled . $updateTime . '">';
     while ($start <= $end) {
