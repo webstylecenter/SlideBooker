@@ -29,7 +29,9 @@ function generateRow($i)
                 <td>
                     ' . timeSelector('eindtijd', $i, new \DateTime('9:00'), new \DateTime('18:00'), 15) . '
                 </td>
-                <td><input name="time' . $i . '" id="time' . $i . '" class="time" type="text" value="' . ($i === 1 ? '00:15' : '') . '" /></td>
+                <td>
+                   '.totalTimeSelector('time', $i).'
+               </td>
                 <td>
                     <input type="radio" name="factureren' . $i . '" id="factureren' . $i . '"' . $disabled . '" value="1" checked="checked" /> Ja
                     <input type="radio" name="factureren' . $i . '" id="factureren' . $i . '"' . $disabled . '" value="0" /> Nee
@@ -55,4 +57,18 @@ function timeSelector($name, $i, \DateTime $start, \DateTime $end, $interval)
     $selector .= '</select>';
 
     return $selector;
+}
+
+function totalTimeSelector($name, $i) {
+    $disabled = $i !== 1 ? ' disabled="disabled"' : '';
+    $html = '';
+    $html .= '<select id="'. $name . $i.'" name="'. $name . $i.'"' . $disabled . '" onchange="enableNextRow(' . $i . ');setTotalTime('.$i.')">';
+    for ($h=0; $h<10; $h=$h+1) {
+        for ($m=0; $m<60; $m=$m+15) {
+            $val = $h.':'.($m < 10 ? '0'.$m : $m);
+            $html .= '<option value="'.$val.'">'.$val.'</option>';
+        }
+    }
+    $html .= '</select>';
+    return $html;
 }

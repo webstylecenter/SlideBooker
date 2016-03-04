@@ -85,3 +85,33 @@ function updateAmountOfTime(nr) {
     var time = calculateTime(start, eind);
     $('#time'+nr).val(time);
 }
+
+function setTotalTime(nr) {
+    var start = $('#starttijd'+nr).val();
+    var totaltime = $('#time'+nr).val();
+
+    start = start.split(':');
+    totaltime = totaltime.split(':');
+
+    start[0] = parseInt(start[0]) + parseInt(totaltime[0]);
+    start[1] = parseInt(start[1]) + parseInt(totaltime[1]);
+
+    if (start[1] >= 60) {
+        start[0]++;
+        start[1] = start[1]-60;
+    }
+
+    if(start[1] == 0) {
+        start[1] = '00';
+    }
+
+    if (start[0] < 10) {
+        start[0] = '0' + start[0];
+    }
+
+    var newTime = start[0]+':'+start[1];
+    $('#eindtijd'+nr).val(newTime);
+
+    console.log(newTime);
+    setNextStartTime(nr, newTime)
+}
